@@ -19,16 +19,8 @@ public class CardapioService {
 	@Autowired
 	private CardapioRepository repository;
 	
-	public Cardapio create(Cardapio obj) {
-		Date dateObj = obj.getData();
-		Calendar cal = Calendar.getInstance(); 
-		cal.setTime(dateObj); 
-		cal.add(Calendar.DATE, 1);
-		obj.setData(cal.getTime());
-		
+	public Cardapio create(Cardapio obj) {	
 		repository.save(obj);
-		
-		obj.setData(dateObj);
 		
 		return obj;
 	}
@@ -47,16 +39,10 @@ public class CardapioService {
 		return repository.findAll();
 	}
 
-	public boolean update(Cardapio obj) {		
-		Date dateObj = obj.getData();
-		Calendar cal = Calendar.getInstance(); 
-		cal.setTime(dateObj); 
-		cal.add(Calendar.DATE, 1);
-		obj.setData(cal.getTime());
+	public boolean update(Cardapio obj) {
 		
 		if (repository.existsById(obj.getData())) {
 			repository.save(obj);			
-			obj.setData(dateObj);
 			
 			return true;
 		}
