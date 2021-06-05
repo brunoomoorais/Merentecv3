@@ -22,7 +22,7 @@ import br.etec.merenda.service.UsuarioService;
 
 
 @RestController
-@RequestMapping("/Usuarios")
+@RequestMapping("api/usuarios")
 public class UsuarioController implements ControllerInterface<Usuario> {
 
 	@Autowired

@@ -20,7 +20,7 @@ import br.etec.merenda.service.PratoService;
 
 
 @RestController
-@RequestMapping("/pratos")
+@RequestMapping("api/pratos")
 public class PratoController implements ControllerInterface<Prato> {
 
 	@Autowired

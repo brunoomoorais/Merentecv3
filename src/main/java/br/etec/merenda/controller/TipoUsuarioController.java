@@ -19,7 +19,7 @@ import br.etec.merenda.service.TipoUsuarioService;
 
 
 @RestController
-@RequestMapping("/TipoUsuarios")
+@RequestMapping("api/tipoUsuarios")
 public class TipoUsuarioController implements ControllerInterface<TipoUsuario> {
 
 	@Autowired

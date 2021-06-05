@@ -23,7 +23,7 @@ import br.etec.merenda.service.CardapioService;
 
 
 @RestController
-@RequestMapping("/Cardapios")
+@RequestMapping("api/cardapios")
 public class CardapioController {
 
 	@Autowired
