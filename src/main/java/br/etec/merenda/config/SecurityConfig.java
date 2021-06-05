@@ -36,15 +36,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	//LIBERAR ROTAS
 	private static final String[] PUBLIC_MATCHERS = {
-			"/pratos/**",
-			"/Cardapios/**",
-			"/Usuarios/**"
+			"api/pratos/**",
+			"api/cardapios/**",
+			"api/usuarios/**"
 	};
 
 	private static final String[] PUBLIC_MATCHERS_POST = {
-			"/pratos/**",
-			"/Cardapios/**",
-			"/Usuarios/**"
+			"api/pratos/**",
+			"api/cardapios/**",
+			"api/usuarios/**"
 			};
 
 	private static final String[] PUBLIC_MATCHERS_SWAGGER = {
