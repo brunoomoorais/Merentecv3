@@ -55,9 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//http.cors().and().csrf().disable();
-		http.cors().disable();
-		http.csrf().disable();
+		http.cors().and().csrf().disable();		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.authorizeRequests()
 			.antMatchers(HttpMethod.GET, PUBLIC_MATCHERS).permitAll()
@@ -79,7 +77,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+		CorsConfiguration config = new CorsConfiguration();
+		config.addAllowedOrigin("https://merentec-9dnt4p.stackblitz.io");
+		config.addAllowedMethod("GET");
+		config.addAllowedMethod("PUT");
+		config.addAllowedMethod("DELETE");
+		config.addAllowedMethod("POST");
+		config.addAllowedMethod("OPTIONS");
+		config.addAllowedHeader("Authorization");
+		config.addAllowedHeader("Content-Type");
+		source.registerCorsConfiguration("/**", config);
 		return source;
 	}
 
